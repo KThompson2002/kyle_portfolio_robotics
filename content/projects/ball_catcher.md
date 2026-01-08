@@ -33,7 +33,7 @@ The system consists of three tightly coupled pipelines:
 2. **Prediction** – Trajectory estimation and interception point computation  
 3. **Control** – Cartesian motion planning and execution using MoveIt 2  
 
-![System Architecture](Architechture.png)
+![System Architecture](/img/Architechture.png)
 
 ---
 
@@ -45,6 +45,9 @@ The system consists of three tightly coupled pipelines:
 - Ball poses are published as ROS 2 transforms for downstream processing.
 
 To support accurate hand–eye calibration, an **ArUco marker-based calibration pipeline** was implemented using `easy_handeye2`.
+
+## RVIZ Display:
+![RVIZ display](/img/ball_ROS.gif)
 
 ---
 

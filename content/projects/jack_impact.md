@@ -6,6 +6,7 @@ summary = "Simulation of Impact Conditions when Jack is being thrown around a sh
 featured = true
 thumbnail = "/img/JackInACup.gif"
 tags = ["vision", "robotics", "ROS2", "MoveIt2", "Franka_Arm", "yolo"]
+github = "https://github.com/KThompson2002/jack_cup_simulation"
 +++
 
 ## Overview
