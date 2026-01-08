@@ -4,6 +4,7 @@ draft = false
 title = 'OpenCV Pen Stealing Robot Arm'
 summary = "Watch out! Utilizing OpenCV, this robot can see purple pens, identify their location, and will reach out to steal them. Keep your pens close!"
 featured = true
+github = "https://github.com/KThompson2002/pen-robot"
 thumbnail = "/img/pen_grab.gif"
 tags = ["vision", "robotics", "OpenCV"]
 +++
