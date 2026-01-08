@@ -1,4 +1,4 @@
-baseurl = "https://kylezthompson.com/"
+baseURL = "https://kylezthompson.com/"
 DefaultContentLanguage = "en"
 title = "Kyle Thompson"
 # Using theme as git submodule
