@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-12"> <section class="projects featured">
+        <h2 style="text-align: center; margin-bottom: 30px;">Featured Projects</h2>
+        <div class="project-grid">
+          {{ $featured := where .Site.RegularPages "Params.featured" true }}
+          {{ range first 3 $featured }}
+            {{ partial "project_card.html" . }}
+          {{ end }}
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="projects more">
+        <h2>More Projects</h2>
+        <div class="project-grid">
+          {{ range after 3 (where .Site.RegularPages "Section" "projects") }}
+            {{ partial "project_card.html" . }}
+          {{ end }}
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+{{ end }}

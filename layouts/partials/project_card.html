@@ -1,0 +1,21 @@
+<div class="project-card"
+     onclick="window.location.href='{{ .RelPermalink }}'">
+
+  {{ if .Params.thumbnail }}
+    <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+  {{ end }}
+
+  <h3>{{ .Title }}</h3>
+  <p>{{ .Summary }}</p>
+
+  {{ if .Params.github }}
+    <a href="{{ .Params.github }}"
+       class="github-link"
+       target="_blank"
+       rel="noopener"
+       onclick="event.stopPropagation()">
+       <i class="fab fa-github"></i> GitHub
+    </a>
+  {{ end }}
+
+</div>

@@ -1,0 +1,156 @@
+/* FEATURED PROJECTS GRID */
+.projects.featured .project-grid {
+  display: grid !important; /* override Bootstrap */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.projects.more .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* .project-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+  background: #fff;
+
+  display: flex;          
+  flex-direction: column; 
+  height: 100%;
+} */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;       /* Force a consistent height */
+  object-fit: cover;   /* Crops the image center so it doesn't look squashed */
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.github-link:hover {
+  text-decoration: underline;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;        /* 1. FORCE EXACT HEIGHT */
+  object-fit: cover;    /* 2. CROP TO FIT (No stretching) */
+  display: block;       /* 3. REMOVE GHOST WHITESPACE */
+  border-radius: 8px;
+  margin-bottom: 1rem;  /* Consistentbox-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Adds a nice pop on hover */ spacing */
+  background-color: #f8f8f8;
+}
+
+.project-card h3 {
+  text-align: center;
+  margin: 0.5rem 0;
+  color: #333 !important;
+
+  /* FORCE 2 LINES HEIGHT */
+  min-height: 3rem;       /* Adjust based on your font size */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* Cut off after 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+  /* VERTICAL CENTER THE TEXT (Optional) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.project-card p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #555;
+
+  /* TRUNCATE TEXT AFTER 3 LINES */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-link {
+  margin-top: auto;      /* Pushes the link to the very bottom of the flex container */
+  display: inline-block; /* Ensures the margin applies correctly */
+  text-align: center;    /* Optional: centers the button text if you want */
+}
+
+/* RESPONSIVE GRID */
+@media (max-width: 992px) {
+  .projects.featured .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects.featured .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* NAV DROPDOWN */
+.navlinks-container {
+  position: relative;
+}
+.navlinks-container .navlinks-children {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  z-index: 1000;
+}
+.navlinks-container:hover .navlinks-children {
+  display: block;
+}
+.navlinks-container .navlinks-children a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+}
+.navlinks-container .navlinks-children a:hover {
+  background-color: #f2f2f2;
+}
