@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenCV on Kyle Thompson</title>
+    <link>https://kylezthompson.com/tags/opencv/</link>
+    <description>Recent content in OpenCV on Kyle Thompson</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>kylezthompson@gmail.com (Kyle Thompson)</managingEditor>
+    <webMaster>kylezthompson@gmail.com (Kyle Thompson)</webMaster>
+    <lastBuildDate>Sat, 03 Jan 2026 15:41:07 -0800</lastBuildDate>
+    <atom:link href="https://kylezthompson.com/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenCV Pen Stealing Robot Arm</title>
+      <link>https://kylezthompson.com/projects/pen_steal/</link>
+      <pubDate>Sat, 03 Jan 2026 15:41:07 -0800</pubDate><author>kylezthompson@gmail.com (Kyle Thompson)</author>
+      <guid>https://kylezthompson.com/projects/pen_steal/</guid>
+      <description>Watch out! Utilizing OpenCV, this robot can see purple pens, identify their location, and will reach out to steal them. Keep your pens close!</description>
+    </item>
+  </channel>
+</rss>

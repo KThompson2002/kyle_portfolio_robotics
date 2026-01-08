@@ -1,0 +1,522 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Wrapping Tension Control - </title>
+
+  <meta name="description" content="Designed, programed, and implemented a device which can measure and control tension of fiberglass tape during Sandia Laboratories’ thermal battery wrapping procedure.">
+  <meta name="author" content="Kyle Thompson"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Kyle Thompson",
+    
+    "url": "https:\/\/kylezthompson.com\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/kylezthompson.com\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/kylezthompson.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/kylezthompson.com\/projects\/petension_control\/",
+          "name": "Wrapping tension control"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Kyle Thompson"
+  },
+  "headline": "Wrapping Tension Control",
+  "description" : "Designed, programed, and implemented a device which can measure and control tension of fiberglass tape during Sandia Laboratories’ thermal battery wrapping procedure.",
+  "inLanguage" : "en",
+  "wordCount":  303 ,
+  "datePublished" : "2024-12-05T16:03:53-08:00",
+  "dateModified" : "2024-12-05T16:03:53-08:00",
+  "image" : "https:\/\/kylezthompson.com\/img\/profile.jpg",
+  "keywords" : [ "vision, robotics, ROS2, MoveIt2, Franka_Arm, yolo" ],
+  "mainEntityOfPage" : "https:\/\/kylezthompson.com\/projects\/petension_control\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/kylezthompson.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/kylezthompson.com\/img\/profile.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Wrapping Tension Control" />
+<meta property="og:description" content="Designed, programed, and implemented a device which can measure and control tension of fiberglass tape during Sandia Laboratories’ thermal battery wrapping procedure.">
+<meta property="og:image" content="https://kylezthompson.com/img/profile.jpg" />
+<meta property="og:url" content="https://kylezthompson.com/projects/petension_control/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kyle Thompson" />
+
+  <meta name="twitter:title" content="Wrapping Tension Control" />
+  <meta name="twitter:description" content="Designed, programed, and implemented a device which can measure and control tension of fiberglass tape during Sandia Laboratories’ thermal battery wrapping procedure.">
+  <meta name="twitter:image" content="https://kylezthompson.com/img/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href='https://kylezthompson.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.152.0">
+  <link rel="alternate" href="https://kylezthompson.com/index.xml" type="application/rss+xml" title="Kyle Thompson"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/brands.css" integrity="sha384-+eXGm6TmVoCZR1gX03US+L++L2mJIfOvp2X0+luTuEktXaF5F+e3zn0sO0HBvOyT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/fontawesome.css" integrity="sha384-B5nyPZa7e84uCJEYHtevCdVYtQosWsbDSRtq3cy/jeSVtQW05GL8CKXO7waXsjPK" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/regular.css" integrity="sha384-V71z/A/p/DGaZAryHhiSXRQj8HdQmK2nBgL2bX23MGD+h6ZKpyxOO76f5eSXmIaj" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/solid.css" integrity="sha384-1IIShlrK5iYgvS7OAgIH3prz4RAFP7hHZ2MaLIb9l3+trFwwnw/NdCWcUHlymZDU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/svg.css" integrity="sha384-iBa7uugTOHXqQ2ngvDYJyKrPPQbd9n2P3EQe+o/0+HZe5TNvV+LO5X0lLLUrXLHP" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/svg-with-js.css" integrity="sha384-STWnS5AGz6M2YxsnGAd536EqcE2y+ktGovMMuhtXLsCBtl7lujeQj2eN4eDxa57x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/v4-font-face.css" integrity="sha384-fH83IkgQi7kturzlxpXfNdsR8aUOcqj5HUORRVnSvJgObZkIw6aqKAaQx20IWyB/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/v4-shims.css" integrity="sha384-cCODJHSivNBsaHei/8LC0HUD58kToSbDU+xT7Rs51BO1v/IvgT/uM0W6xMoUqKfn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/v5-font-face.css" integrity="sha384-atSdF89mIn15dv+o2LKkDM6mCh3hwh6A7mwZ6F2it/kenqZbMu+QW/ye1OG4XSWV" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="https://kylezthompson.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://kylezthompson.com/css/highlight.min.css" /><link rel="stylesheet" href="https://kylezthompson.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://kylezthompson.com/css/custom.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://kylezthompson.com/">Kyle Thompson</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+        <li class="navlinks-container">
+          <a class="navlinks-parent" role="button" tabindex="0">Featured Projects</a>
+          <div class="navlinks-children">
+            
+            
+              <a href="/projects/jack_impact/">Jack in a Cup Impact Simulation</a>
+            
+              <a href="/projects/ball_catcher/">Ball Catching Franka Arm with YOLO</a>
+            
+              <a href="/projects/pen_steal/">OpenCV Pen Stealing Robot Arm</a>
+            
+          </div>
+        </li>
+
+        
+          
+            <li>
+              <a title="About Me" href="/about/">About Me</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Resume" href="/resume.pdf">Resume</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Kyle Thompson" href="https://kylezthompson.com/">
+            <img class="avatar-img" src="https://kylezthompson.com/img/profile.jpg" alt="Kyle Thompson" />
+           
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="projects-heading">
+              
+                <h1>Wrapping Tension Control</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <article role="main" class="blog-post">
+
+        
+
+        <h2 id="objective">Objective:</h2>
+<p>Design, program, and implement a device which can measure and control tension of fiberglass tape during Sandia Laboratories’ thermal battery wrapping procedure.</p>
+<h2 id="given-parameters">Given Parameters</h2>
+<p>Measurement and control of tension between 10-40 lbs. at an accuracy of 1-2 lbs. on a battery which sits under 2000 lbs. of compressive force.</p>
+<h2 id="implementation">Implementation:</h2>
+<ul>
+<li>Tension Measurement is completed controlling the angle of interaction with a 30kg rated load cell. A mechanical Analysis was completed to justify a linear relationship between normal force and tension, accounting for the capstan effect. Via an external load cell at tape output, six data points of output tension and load cell readings are utilized to generate a trendline. The Load cell is connected to a HX711 Load Cell Amplifier and data is measured and interpreted by a python script on a Raspberry Pi 2B.</li>
+<li>Motor Control is completed by a feedback loop generated by the raspberry pi, driving the NEMA 2 stepper motor through a Polulu DRV 8825 motor driver. The driver implements 1/32 micro-steps which progressively increase or decrease compression on tape role, increasing or decreasing tension. Tension is held at a user input value.</li>
+<li>Due to the requirements of constant rotation of the wrapping apparatus and the battery staying under compressive load in the axis of rotation, and modified slip ring was designed to allow for compressive force to run through the slip ring. FEA and buckling analysis were completed to ensure the modified design could withstand the projected compressive load.</li>
+</ul>
+<p><img src="/img/tensionCAD.png" alt="Exploded CAD"></p>
+<p><img src="/img/TensionReal.png" alt="Labeled Components of Physical Assembly"></p>
+<h2 id="primary-contributions">Primary Contributions:</h2>
+<ul>
+<li>Selection, design, and implementation of electronics components.</li>
+<li>Utilization Linux OS and Python on Raspberry Pi 2B to calibrate load cell, control stepper motor, and design feedback loop control.</li>
+<li>Design and FEA analysis of the modified slip ring.</li>
+<li>Traveled to Albuquerque, New Mexico to present the project and findings live to Sandia Laboratories’ power sources development team.</li>
+</ul>
+<p><img src="/img/TensionFritzing.png" alt="Electronics Schematics"></p>
+<p><img src="/img/TensionControlCAD.png" alt="Full CAD Assembly"></p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://kylezthompson.com/tags/vision/">vision</a>&nbsp;
+            
+              <a href="https://kylezthompson.com/tags/robotics/">robotics</a>&nbsp;
+            
+              <a href="https://kylezthompson.com/tags/ros2/">ROS2</a>&nbsp;
+            
+              <a href="https://kylezthompson.com/tags/moveit2/">MoveIt2</a>&nbsp;
+            
+              <a href="https://kylezthompson.com/tags/franka_arm/">Franka_Arm</a>&nbsp;
+            
+              <a href="https://kylezthompson.com/tags/yolo/">yolo</a>&nbsp;
+            
+          </div>
+        
+
+        
+          <hr/>
+          <section id="social-share">
+            <div class="list-inline footer-links">
+              
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fkylezthompson.com%2fprojects%2fpetension_control%2f&amp;text=Wrapping%20Tension%20Control&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkylezthompson.com%2fprojects%2fpetension_control%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fkylezthompson.com%2fprojects%2fpetension_control%2f&amp;title=Wrapping%20Tension%20Control" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fkylezthompson.com%2fprojects%2fpetension_control%2f&amp;title=Wrapping%20Tension%20Control" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fkylezthompson.com%2fprojects%2fpetension_control%2f&amp;title=Wrapping%20Tension%20Control" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fkylezthompson.com%2fprojects%2fpetension_control%2f&amp;description=Wrapping%20Tension%20Control" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+            </div>
+          </section>
+        
+
+        
+          
+            
+          
+
+          
+            <h4 class="see-also">See also</h4>
+            <ul>
+              
+              
+                <li><a href="/projects/jack_impact/">Jack in a Cup Impact Simulation</a></li>
+              
+                <li><a href="/projects/ball_catcher/">Ball Catching Franka Arm with YOLO</a></li>
+              
+                <li><a href="/projects/pen_steal/">OpenCV Pen Stealing Robot Arm</a></li>
+              
+            </ul>
+          
+        
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://kylezthompson.com/projects/tic_tac/" title="Tic Tac Toe playing robot arm">
+                &larr; Previous Post
+              </a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://kylezthompson.com/projects/pen_steal/" title="OpenCV Pen Stealing Robot Arm">
+                Next Post &rarr;
+              </a>
+            </li>
+          
+        </ul>
+      
+
+      
+
+        
+
+        
+
+        
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="mailto:kylezthompson@gmail.com" title="Email me">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://github.com/KThompson2002" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://linkedin.com/in/kyle-z-thompson" title="LinkedIn">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Kyle Thompson</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2026
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://kylezthompson.com/">Kyle Thompson</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.152.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="https://kylezthompson.com/js/main.js"></script>
+<script src="https://kylezthompson.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://kylezthompson.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

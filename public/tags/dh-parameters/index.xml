@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DH-Parameters on Kyle Thompson</title>
+    <link>https://kylezthompson.com/tags/dh-parameters/</link>
+    <description>Recent content in DH-Parameters on Kyle Thompson</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>kylezthompson@gmail.com (Kyle Thompson)</managingEditor>
+    <webMaster>kylezthompson@gmail.com (Kyle Thompson)</webMaster>
+    <lastBuildDate>Wed, 08 May 2024 16:51:49 -0600</lastBuildDate>
+    <atom:link href="https://kylezthompson.com/tags/dh-parameters/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tic Tac Toe playing robot arm</title>
+      <link>https://kylezthompson.com/projects/tic_tac/</link>
+      <pubDate>Wed, 08 May 2024 16:51:49 -0600</pubDate><author>kylezthompson@gmail.com (Kyle Thompson)</author>
+      <guid>https://kylezthompson.com/projects/tic_tac/</guid>
+      <description>Robot arm which never loses tic tac toe, utilzing inverse kinematics and predetermined positions for game play and the minimax algorithm for decision making</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Kyle Thompson</title>
+    <link>https://kylezthompson.com/categories/</link>
+    <description>Recent content in Categories on Kyle Thompson</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>kylezthompson@gmail.com (Kyle Thompson)</managingEditor>
+    <webMaster>kylezthompson@gmail.com (Kyle Thompson)</webMaster>
+    <atom:link href="https://kylezthompson.com/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

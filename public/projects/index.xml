@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Kyle Thompson</title>
+    <link>https://kylezthompson.com/projects/</link>
+    <description>Recent content in Projects on Kyle Thompson</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>kylezthompson@gmail.com (Kyle Thompson)</managingEditor>
+    <webMaster>kylezthompson@gmail.com (Kyle Thompson)</webMaster>
+    <lastBuildDate>Mon, 05 Jan 2026 14:36:49 -0800</lastBuildDate>
+    <atom:link href="https://kylezthompson.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jack in a Cup Impact Simulation</title>
+      <link>https://kylezthompson.com/projects/jack_impact/</link>
+      <pubDate>Mon, 05 Jan 2026 14:36:49 -0800</pubDate><author>kylezthompson@gmail.com (Kyle Thompson)</author>
+      <guid>https://kylezthompson.com/projects/jack_impact/</guid>
+      <description>Simulation of Impact Conditions when Jack is being thrown around a shaking cup, utilizing Euler Lagrage Equations, the Impact Equations, and python.</description>
+    </item>
+    <item>
+      <title>Ball Catching Franka Arm with YOLO</title>
+      <link>https://kylezthompson.com/projects/ball_catcher/</link>
+      <pubDate>Mon, 05 Jan 2026 11:09:08 -0800</pubDate><author>kylezthompson@gmail.com (Kyle Thompson)</author>
+      <guid>https://kylezthompson.com/projects/ball_catcher/</guid>
+      <description>Real-time ball detection using YOLO and stereo vision combined with least squares analysis trajectory prediction and the MoveIt2 libray for franka arm control.</description>
+    </item>
+    <item>
+      <title>OpenCV Pen Stealing Robot Arm</title>
+      <link>https://kylezthompson.com/projects/pen_steal/</link>
+      <pubDate>Sat, 03 Jan 2026 15:41:07 -0800</pubDate><author>kylezthompson@gmail.com (Kyle Thompson)</author>
+      <guid>https://kylezthompson.com/projects/pen_steal/</guid>
+      <description>Watch out! Utilizing OpenCV, this robot can see purple pens, identify their location, and will reach out to steal them. Keep your pens close!</description>
+    </item>
+    <item>
+      <title>Wrapping Tension Control</title>
+      <link>https://kylezthompson.com/projects/petension_control/</link>
+      <pubDate>Thu, 05 Dec 2024 16:03:53 -0800</pubDate><author>kylezthompson@gmail.com (Kyle Thompson)</author>
+      <guid>https://kylezthompson.com/projects/petension_control/</guid>
+      <description>Designed, programed, and implemented a device which can measure and control tension of fiberglass tape during Sandia Laboratories’ thermal battery wrapping procedure.</description>
+    </item>
+    <item>
+      <title>Tic Tac Toe playing robot arm</title>
+      <link>https://kylezthompson.com/projects/tic_tac/</link>
+      <pubDate>Wed, 08 May 2024 16:51:49 -0600</pubDate><author>kylezthompson@gmail.com (Kyle Thompson)</author>
+      <guid>https://kylezthompson.com/projects/tic_tac/</guid>
+      <description>Robot arm which never loses tic tac toe, utilzing inverse kinematics and predetermined positions for game play and the minimax algorithm for decision making</description>
+    </item>
+  </channel>
+</rss>
