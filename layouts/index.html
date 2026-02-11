@@ -16,7 +16,7 @@
       <section class="projects more">
         <h2>More Projects</h2>
         <div class="project-grid">
-          {{ range after 3 (where .Site.RegularPages "Section" "projects") }}
+          {{ range where (where (where .Site.RegularPages "Section" "projects") "Params.featured" "!=" true) ".Draft" "!=" true }}
             {{ partial "project_card.html" . }}
           {{ end }}
         </div>

@@ -40,7 +40,10 @@ The system consists of three tightly coupled pipelines:
 ## Perception Pipeline
 
 - An **Intel RealSense camera** provides synchronized RGB-D data at 60 FPS.
-- A **YOLO-based object detector** identifies the ball in the RGB stream.
+- Multiple rosbags were recorded by throwing the ball in different trajectories and conditions.
+- The collected data was labeled and used to train a YOLO object detection model using Roboflow.
+- The trained model weights are loaded by the vision node at runtime.
+- The **YOLO object detector** identifies the ball in the RGB stream.
 - Depth data is fused with image detections to compute the ball’s **3D position**.
 - Ball poses are published as ROS 2 transforms for downstream processing.
 
@@ -55,7 +58,7 @@ To support accurate hand–eye calibration, an **ArUco marker-based calibration 
 
 Once the ball is detected across multiple frames:
 
-- A trajectory prediction node estimates the ball’s flight path.
+- A trajectory prediction node estimates the ball’s flight path with a least-squared algoritm.
 - The intersection point between the predicted trajectory and a predefined catching plane is computed.
 - The predicted intercept pose is published in real time for motion planning.
 
