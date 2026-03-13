@@ -1,6 +1,6 @@
 +++
 title = "Ball Catching Franka Arm with YOLO"
-date = '2026-01-05T11:09:08-08:00'
+date = '2026-01-10T11:09:08-08:00'
 draft = false
 summary = "Real-time ball detection using YOLO and stereo vision combined with least squares analysis trajectory prediction and the MoveIt2 libray for franka arm control."
 featured = true

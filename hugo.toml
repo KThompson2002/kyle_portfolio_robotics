@@ -12,6 +12,15 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentsUseClassic = true
 #pygmentOptions = "linenos=inline"
 
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['$$', '$$']]
+    inline = [['$', '$']]
+
 [Services]
   [Services.Disqus]
     # Shortname = "XXX"
@@ -21,7 +30,7 @@ pygmentsCodefencesGuessSyntax = true
 [Params]
 #  homeTitle = "Kyle Thompson" # Set a different text for the header on the home page
   subtitle = "Robotics Masters Student at Northwestern"
-  mainSections = ["post","posts"]
+  mainSections = ["projects"]
   logo = "img/profile.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"

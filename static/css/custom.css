@@ -127,6 +127,14 @@
   }
 }
 
+/* RESPONSIVE YOUTUBE EMBED */
+.video-container iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
 /* NAV DROPDOWN */
 .navlinks-container {
   position: relative;
