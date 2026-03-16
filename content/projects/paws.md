@@ -1,6 +1,6 @@
 +++
 date = '2026-03-10T18:07:46-05:00'
-draft = true
+draft = false
 title = 'Open Vocabulary Semantic Memory for Unitree Go2'
 summary = 'An autonomous navigating Unitree Go2 which builds an open vocabulary memory of its surroundings with SAM3 and CLIP'
 featured = true
