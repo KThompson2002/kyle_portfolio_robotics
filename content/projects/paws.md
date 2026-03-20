@@ -10,12 +10,12 @@ github = "https://github.com/KThompson2002/winter_project"
 
 ## Overview
 
-To successfully operate in the real world, robots needs a persistent, queryable memory of the objects in its environment. It can't be a fixed list of categories decided at training time. This project is a quadruped robot that freely explores an environment and constructs a semantic map of everything it observes, which can then be queried in plain English to drive autonomous navigation.
+Utilizing SAM3 for class Agnostic Segmentation, and a combination of geometric and clip-embedded similarity scores, I have implemented an open-vocabulary 3D memory alongside the Nav2 and RTAB-Maps autonomous navigation stack. Using a simple text query, Unitree Go2 can be directed to navigate to any object it has seen in it's surroundings with no prior training in that environment.
 
 ## Demo
 
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/--Bjr-55ZY0?si=WTRINm3Di1CkeE-n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LwYi1FsR96A?si=TwJHmsbUj2qXUNF0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 After building out a 3D map and semantic graph of it's environment, the Go2 autonomously navigates to items based off simple descriptions (i.e. 'red balloon', 'yellow sign', 'orange jacket'). After an object is flagged, its marker representation turns red in the concept graph.
@@ -57,6 +57,9 @@ For a query string $q$:
 
 $$\mathbf{t} = \frac{f_T(q)}{\|f_T(q)\|_2} \in \mathbb{R}^{512}$$
 
+
+![CLIP Architecture](/img/clip.webp)
+*Figure 1: Architecture of CLIP model (taken from the original paper)*
 
 ### Cosine Similarity
 All comparisons between embeddings use cosine similarity. Since vectors are L2-normalized,
@@ -101,14 +104,7 @@ $$\mathbf{p}^{(n+1)} = \frac{n \cdot \mathbf{p}^{(n)} + \mathbf{p}_{\text{new}}}
 
 ### CLIP Embedding
 
-$$\tilde{\mathbf{v}}^{(n+1)} = \frac{n \cdot \mathbf{v}^{(n)} + \mathbf{v}_{\text{new}}}{n + 1}$$
-
-Re-normalized to the unit sphere after each update:
-
-$$\mathbf{v}^{(n+1)} = \frac{\tilde{\mathbf{v}}^{(n+1)}}{\|\tilde{\mathbf{v}}^{(n+1)}\|_2}$$
-
-This incrementally refines the semantic representation of each object
-without storing the full observation history.
+CLIP embeddings are re-normalized to the unit sphere after each update. This incrementally refines the semantic representation of each object without storing the full observation history.
 
 
 ## 5. Natural Language Query & Retrieval
@@ -116,6 +112,14 @@ without storing the full observation history.
 Given a query string $q$, the system finds the best-matching object in the map.
                 
 The centroid $\mathbf{p}_{o^*}$ is projected to $z = 0$ and published as a Nav2 goal pose.
+
+## 6. Remote GPU Inference
+
+Remote inference was done with a combination of FastAPI and Uvicorn.
+
+FastAPI was chosen for a key reason: Async I/O. Async def route handlers let the server handle image upload/decode without blocking while the GPU is busy, making it non-blocking for future multi-request scenarios.
+
+Uvicorn was chosen because It's the standard ASGI server for FastAPI. FastAPI is an ASGI framework and requires an ASGI-compatible server and Uvicorn fills that role.
 
 ## Nav 2 and RTAB-Map
 
@@ -141,6 +145,22 @@ transform that Nav2 uses.
 
 Reg/Strategy = 2 — visual features + ICP scan matching combined.
 
+### Frontier Exploration                                                          
+                                           
+Frontier exploration is an autonomous map-building strategy where a robot navigates to the boundaries between known free space and unknown space in order to systematically explore an environment.
+How It Works                                                                  
+  1. Frontier Detection — The occupancy grid (from SLAM) is scanned for cells   
+  that border both free and unknown space. These edges are the frontiers.
+  2. Goal Selection — A frontier is selected as the next navigation target,     
+  typically by some cost function (e.g., nearest frontier, largest unexplored   
+  region, or information gain).
+  3. Navigation — The robot drives to the selected frontier using Nav2                                                               
+  4. Map Update — As the robot moves, RTAB-SLAM updates the map, revealing new
+  frontiers and marking old ones as explored.                                   
+  5. Repeat — The process continues until no frontiers remain (full coverage) or
+   a stop condition is met.  
+
+While Frontier Exploration is still in progress, it should be implementable with minor modifications to the RTAB-Map Parameters.
 
 ## Conclusions and Takeaways
 
