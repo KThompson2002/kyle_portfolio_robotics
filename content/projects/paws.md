@@ -10,7 +10,7 @@ github = "https://github.com/KThompson2002/winter_project"
 
 ## Overview
 
-Utilizing SAM3 for class Agnostic Segmentation, and a combination of geometric and clip-embedded similarity scores, I have implemented an open-vocabulary 3D memory alongside the Nav2 and RTAB-Maps autonomous navigation stack. Using a simple text query, Unitree Go2 can be directed to navigate to any object it has seen in it's surroundings with no prior training in that environment.
+Utilizing SAM3 for Segmentation, and a combination of geometric and clip-embedded similarity scores, I have implemented an open-vocabulary 3D memory alongside the Nav2 and RTAB-Maps autonomous navigation stack. Using a simple text query, Unitree Go2 can be directed to navigate to any object it has seen in it's surroundings with no prior training in that environment.
 
 ## Demo
 

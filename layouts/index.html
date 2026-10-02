@@ -1,3 +1,28 @@
+{{ define "header" }}
+<header class="header-section">
+  <div class="intro-header no-img">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="hero-inner">
+            <img class="hero-photo" src="{{ "img/kyle_profile.jpg" | relURL }}" alt="{{ .Site.Title }}">
+            <div class="hero-text">
+              <h1>{{ .Site.Title }}</h1>
+              <p class="hero-blurb">I'm a robotics master's student at Northwestern specializing in computer vision, real-time systems, and autonomous robots. This site showcases my projects and work.</p>
+              <div class="hero-actions">
+                <a class="resume-btn" href="{{ "resume.pdf" | relURL }}" download="Kyle_Thompson_Resume.pdf">Download Resume</a>
+                <a class="social-icon" href="https://github.com/{{ .Site.Params.author.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a class="social-icon" href="https://www.linkedin.com/in/{{ .Site.Params.author.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{ end }}
+
 {{ define "main" }}
 <div class="container" role="main">
   <div class="row">
@@ -21,6 +46,31 @@
           {{ end }}
         </div>
       </section>
+
+      {{ with .Site.Data.experience }}
+      <hr />
+
+      <section class="career-timeline">
+        <h2>Experience</h2>
+        <div class="timeline">
+          {{ range . }}
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div class="timeline-content">
+                <span class="timeline-date">{{ .start }} &ndash; {{ .end }}</span>
+                <h3 class="timeline-role">{{ .role }}</h3>
+                <span class="timeline-company">{{ .company }}{{ with .location }} &middot; {{ . }}{{ end }}</span>
+                {{ with .highlights }}
+                <ul class="timeline-highlights">
+                  {{ range . }}<li>{{ . }}</li>{{ end }}
+                </ul>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
 
     </div>
   </div>

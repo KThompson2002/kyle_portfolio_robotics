@@ -3,14 +3,14 @@ date = '2026-01-05T14:36:49-08:00'
 draft = false
 title = 'Jack in a Cup Impact Simulation'
 summary = "Simulation of Impact Conditions when Jack is being thrown around a shaking cup, utilizing Euler Lagrage Equations, the Impact Equations, and python."
-featured = true
+featured = false
 thumbnail = "/img/JackInACup.gif"
 tags = ["vision", "robotics", "ROS2", "MoveIt2", "Franka_Arm", "yolo"]
 github = "https://github.com/KThompson2002/jack_cup_simulation"
 +++
 
 ## Overview
-This project develops a physics-based simulation of a **jack bouncing inside a rotating cup** using first-principles rigid body dynamics. The system is modeled using the **Euler–Lagrange formulation**, incorporating inertia modeling, constraint-based impact detection, and external forcing.
+This project develops a physics-based simulation of a jack bouncing inside a rotating cup using first-principles rigid body dynamics. The system is modeled using the Euler–Lagrange formulation**, incorporating inertia modeling, constraint-based impact detection, and external forcing.
 
 The goal was to create a realistic dynamic simulation capturing rotational coupling, collision effects, and energy transfer between bodies.
 
@@ -24,7 +24,7 @@ The goal was to create a realistic dynamic simulation capturing rotational coupl
 ### Inertia Modeling
 - **Cup**
   - Approximated as four rectangular prisms
-  - Inertia of each wall computed and combined using the **parallel axis theorem**
+  - Inertia of each wall computed and combined using the parallel axis theorem
 - **Jack**
   - Modeled as four point masses at equal distance from the center
   - Total inertia computed using the parallel axis theorem
@@ -42,9 +42,9 @@ q = (x_1, y_1, x_2, y_2, \theta_1, \theta_2)
 \]
 
 Steps:
-1. Compute **kinetic energy** using body velocity formulation  
-2. Compute **gravitational potential energy** from rotation matrices  
-3. Form the **Lagrangian**
+1. Compute kinetic energy using body velocity formulation  
+2. Compute gravitational potential energy from rotation matrices  
+3. Form the Lagrangian
 
 \[
 L = T - V
@@ -62,11 +62,11 @@ Impacts were modeled using geometric constraints:
 
 - Each cup wall \( e_1 - e_4 \)
 - Each jack mass \( r_1 - r_4 \)
-- **16 relative position constraints**
+- 16 relative position constraints
 
 At each timestep:
-- If displacement fell within a tolerance → **collision detected**
-- Post-impact velocities computed using **elastic collision equations**
+- If displacement fell within a tolerance → collision detected
+- Post-impact velocities computed using elastic collision equations
 
 This enabled realistic bouncing behavior inside the cup. :contentReference[oaicite:1]{index=1}
 
@@ -77,7 +77,7 @@ This enabled realistic bouncing behavior inside the cup. :contentReference[oaici
 To generate sustained motion:
 
 - Upward force applied to counteract gravity on the cup
-- **Sinusoidal forcing** applied to simulate shaking
+- Sinusoidal forcing applied to simulate shaking
 - Additional gravity compensation added for the jack
 - Small initial velocity introduced to initiate impacts
 
@@ -100,8 +100,8 @@ The motion qualitatively resembled a physical jack bouncing inside a shaken cont
 
 ## Key Takeaways
 
-- Implemented full **Euler–Lagrange dynamic modeling** for a multi-body system
-- Developed **collision detection with constraint-based logic**
+- Implemented full Euler–Lagrange dynamic modeling for a multi-body system
+- Developed collision detection with constraint-based logic
 - Modeled realistic rigid-body interactions and energy transfer
 - Explored stability challenges in simulation and force design
 

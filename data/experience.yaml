@@ -1,0 +1,82 @@
+# ============================================================================
+#  CAREER TIMELINE — work experience shown on the home page (under "More Projects")
+# ============================================================================
+#
+#  HOW TO EDIT
+#  -----------
+#  Each "- role:" block below is one entry on the vertical timeline.
+#  Entries display top-to-bottom in the order they appear here, so keep the
+#  newest role at the top.
+#
+#  To ADD a job:      copy a whole block (from "- role:" down to its last
+#                     highlight) and paste it where you want it to appear.
+#  To REMOVE a job:   delete its whole block.
+#  To REORDER:        move a block up or down.
+#
+#  Fields for each entry:
+#    role        Your job title                         (required)
+#    company     Company name                           (required)
+#    location    City, State  (shown after the company; delete the line to hide)
+#    start       Start date,  e.g. "Jun 2026"           (required)
+#    end         End date,    e.g. "Aug 2025" or "Present"   (required)
+#    highlights  Bullet points — one "    - " line each (optional; delete all
+#                lines to show none)
+#
+#  Keep the indentation exactly as shown (2 spaces), and wrap any text that
+#  contains a colon ":" in double quotes. After saving, refresh the site.
+# ============================================================================
+
+- role: Robotics Software Engineering Intern
+  company: Vermeer
+  location: Brooklyn, NY
+  start: Jun 2026
+  end: Present
+  highlights:
+    - Optimized FR-20 cobot camera calibration for a high-precision computer vision pipeline.
+    - Worked on advanced state-estimation algorithms, developed tools for covariance scaling analysis.
+
+- role: Began Masters of Science in Robotics
+  company: Northwestern University
+  location: Evanston, IL
+  start: September 2025
+  end: December 2026
+  highlights:
+    - Began transition from primarily mechanical design engineer to full-stack robotics engineer.
+    - Gained pivotal exposure across projects to ROS 2, perception algorithms, and machine learning.
+
+- role: Engineering Intern
+  company: Willow
+  location: Mountain View, CA
+  start: Apr 2025
+  end: Aug 2025
+  highlights:
+    - Prototyped multi-antenna Bluetooth Channel Sounding distance-measurement firmware in C.
+    - Performed DFU and system validation of embedded firmware on 150 Willow Sync pumps.
+
+- role: Graduated with Mechanical Engineering Degree
+  company: University of Illinois Urbana-Champaign
+  location: Champaign, IL
+  start: August 2020
+  end: December 2024
+  highlights:
+    - Completed thermal battery wrapping station senior design project for Sandia National Labs, including an in person visit.
+    - Completed a CS Minor, began growing exposure to automated system design.
+
+
+- role: Mechanical Engineering Intern
+  company: Willow
+  location: Mountain View, CA
+  start: Jun 2024
+  end: Aug 2024
+  highlights:
+    - Used NX and SLA printing to rapidly fabricate soft-plastic prototypes.
+    - Created test models and generated vacuum waveforms.
+
+- role: R&D Intern
+  company: Ancora Heart
+  location: Santa Clara, CA
+  start: Aug 2023
+  end: Dec 2023
+  highlights:
+    - Executed verification testing, fixture development, and data analysis for catheter performance evaluation.
+    - Assembled and programmed (in C) an automated catheter-braiding system, cutting braiding time by 50%.
